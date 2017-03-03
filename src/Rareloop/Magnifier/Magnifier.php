@@ -9,11 +9,11 @@ class Magnifier
     public static function init($url) {
         static::$url = $url;
 
-        add_shortcode('magnifier', array(get_class(static), 'shortcodeHandler'));
+        add_shortcode('magnifier', array(get_called_class(), 'shortcodeHandler'));
 
-        add_action('wp_enqueue_scripts', array(get_class(static), 'registerAssets'));
+        add_action('wp_enqueue_scripts', array(get_called_class(), 'registerAssets'));
 
-        add_filter('attachment_fields_to_edit', array(get_class(static), 'addAttachmentDetails'), null, 2);
+        add_filter('attachment_fields_to_edit', array(get_called_class(), 'addAttachmentDetails'), null, 2);
     }
 
     /**
