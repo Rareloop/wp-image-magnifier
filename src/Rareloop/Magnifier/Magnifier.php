@@ -74,8 +74,11 @@ class Magnifier
             return;
         }
 
-        $imageUrl = wp_get_attachment_image_src($image->ID, 'large')[0];
-        $largeImageUrl = wp_get_attachment_image_src($image->ID, 'full')[0];
+        $regularImage = wp_get_attachment_image_src($image->ID, 'large');
+        $largeImage = wp_get_attachment_image_src($image->ID, 'full');
+
+        $imageUrl = $regularImage[0];
+        $largeImageUrl = $largeImage[0];
 
         $alt = get_post_meta($image->ID, '_wp_attachment_image_alt', true);
         $title = $image->post_title;
