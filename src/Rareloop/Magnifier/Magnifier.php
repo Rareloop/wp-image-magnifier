@@ -82,10 +82,15 @@ class Magnifier
 
         $alt = get_post_meta($image->ID, '_wp_attachment_image_alt', true);
         $title = $image->post_title;
+
+        ob_start();
+        
         ?>
             <a href="<?php echo $largeImageUrl; ?>">
                 <img alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" src="<?php echo $imageUrl; ?>" class="wp-magnify" data-magnify-src="<?php echo $largeImageUrl; ?>">
             </a>
         <?php
+
+        return ob_get_clean();
     }
 }
