@@ -31,7 +31,7 @@ class Magnifier
         $formFields["wp-magnifier-shortcode"]["extra_rows"] = array(
             "wp-magnifier-shortcode-1" => 'Add the code below to the content editor to insert this image with a magnifier.',
             "wp-magnifier-shortcode-2" => '
-                <pre><code>[magnifier id="' . $post->ID . '"]</code></pre>
+                <input style="font-family: courier; font-size: 13px; background: #eaeaea; padding: 3px 5px 2px; border:0;" value="[magnifier id=&quot;' . $post->ID . '&quot;]"/>
             ',
         );
 
